@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  /* Black theme */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #131313;
+  --bg-card: #1a1a1a;
+  --bg-elevated: #252525;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #737373;
+  --accent: #ffb320;
+  --accent-hover: #ffc040;
+  --accent-new: #ff205f;
+  --accent-strategy: #4eae60;
+  --accent-racing: #694eae;
+  --accent-adventure: #40abf5;
+  --border: #2a2a2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 70px); }
+h2 { font-size: clamp(1.5rem, 3vw, 36px); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 30px); }
+h4 { font-size: clamp(1.1rem, 2vw, 24px); }
+h5 { font-size: clamp(1rem, 1.5vw, 20px); }
+h6 { font-size: 16px; }
+
+p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Buttons */
+.site-btn {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  color: var(--bg-primary);
+  padding: 16px 30px;
+  min-width: 153px;
+  border-radius: 50px;
+  font-weight: 500;
+  border: none;
+  background: var(--accent);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.site-btn:hover {
+  background: var(--accent-hover);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+.site-btn.btn-sm {
+  padding: 10px 30px;
+  min-width: 163px;
+}
+
+/* Category badges */
+.cata {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+  padding: 6px 25px;
+}
+
+.cata.new { background: var(--accent-new); }
+.cata.strategy { background: var(--accent-strategy); }
+.cata.racing { background: var(--accent-racing); }
+.cata.adventure { background: var(--accent-adventure); }
+
+/* Section spacing */
+.spad {
+  padding-top: clamp(40px, 8vw, 97px);
+  padding-bottom: clamp(40px, 8vw, 97px);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: clamp(30px, 5vw, 75px);
+}
+
+.section-title h2 {
+  padding-top: 10px;
+}
+
+/* Background helper */
+.set-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col-lg-3, .col-lg-4, .col-lg-8, .col-md-6, .col-md-9 {
+  padding: 0 15px;
+}
+
+.col-xl-5 { flex: 0 0 41.666%; max-width: 41.666%; }
+.col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+.col-lg-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+.col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+.col-lg-8 { flex: 0 0 66.666%; max-width: 66.666%; }
+.col-md-6 { flex: 0 0 50%; max-width: 50%; }
+.col-md-7 { flex: 0 0 58.333%; max-width: 58.333%; }
+.col-md-9 { flex: 0 0 75%; max-width: 75%; }
+
+@media (max-width: 1199px) {
+  .col-xl-5 { flex: 0 0 100%; max-width: 100%; }
+}
+@media (max-width: 991px) {
+  .col-lg-3, .col-lg-4, .col-lg-6, .col-lg-8 { flex: 0 0 100%; max-width: 100%; }
+  .col-md-6, .col-md-7 { flex: 0 0 100%; max-width: 100%; }
+}
+
+@media (max-width: 767px) {
+  .col-md-6, .col-md-9 { flex: 0 0 100%; max-width: 100%; }
+}
+
+.p-0 { padding: 0 !important; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 2rem; }
+.mb-md-0 { }
+@media (max-width: 767px) { .mb-5 { margin-bottom: 1.5rem; } }
+.pt-5 { padding-top: 2rem; }
+.pt-lg-0 { }
+@media (min-width: 992px) { .pt-lg-0 { padding-top: 0; } }
+
+/* Loader */
+.loader {
+  width: 40px;
+  height: 40px;
+  border-radius: 60px;
+  border: 4px solid var(--accent);
+  border-left-color: transparent;
+  animation: loader 0.8s linear infinite;
+}
+
+@keyframes loader {
+  to { transform: rotate(360deg); }
+}
