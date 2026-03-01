@@ -1,8 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
-import NewsTicker from '@/components/NewsTicker';
+
 import PageInfo from '@/components/PageInfo';
 
 const gameReviews = [
@@ -24,7 +22,7 @@ const recentReviews = [
 export default function ReviewPage() {
   return (
     <>
-      <NewsTicker />
+  
       <PageInfo
         title="Game reviews"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum."

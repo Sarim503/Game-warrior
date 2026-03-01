@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { ClientFooterTop, ClientFooter } from "@/components/ClientWrapper";
 import Preloader from "@/components/Preloader";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   title: "Game Warrior - Gaming Template",
@@ -22,6 +23,7 @@ export default function RootLayout({
         {children}
         <ClientFooterTop />
         <ClientFooter />
+        <WhatsAppFloat />
       </body>
     </html>
   );

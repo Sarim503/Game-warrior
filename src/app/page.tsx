@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import NewsTicker from '@/components/NewsTicker';
+
 
 const heroSlides = [
   { img: '/img/slider-1.jpg', title: 'The Best', span: 'Games', subtitle: 'Out There' },
@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <>
-      <NewsTicker />
+     
 
       {/* Hero Section */}
       <section className="hero-section">

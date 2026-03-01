@@ -7,8 +7,8 @@ import { useState } from 'react';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/review', label: 'Games' },
-  { href: '/categories', label: 'Blog' },
-  { href: '/community', label: 'Forums' },
+
+
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -21,9 +21,7 @@ export default function Header() {
         <Link href="/" className="site-logo">
           <Image src="/img/logo.png" alt="Game Warrior" width={120} height={40} />
         </Link>
-        <div className="user-panel">
-          <Link href="#">Login</Link> / <Link href="#">Register</Link>
-        </div>
+        
         <button
           className="nav-switch"
           onClick={() => setMenuOpen(!menuOpen)}
