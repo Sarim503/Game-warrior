@@ -8,7 +8,8 @@ export default function ContactPage() {
     <>
       <PageInfo
         title="Contact us"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum."
+        description="Passionate 3D Graphics Designer & Animator with 6 years of professional experience creating high-quality assets for games and digital media. My strong love for video games, animated characters, and digital art inspired me to build a career where creativity meets technology.
+."
         bgImage="/img/page-top-bg/5.jpg"
       />
       <section className="page-section spad contact-page">
@@ -16,11 +17,7 @@ export default function ContactPage() {
         
           <div className="row">
             <div className="col-lg-8 mx-auto">
-              <h4 className="comment-title">Contact us</h4>
-              <p>
-                Odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat
-                bibendum orci, non elementum urna. Cras sit amet sapien aliquam.
-              </p>
+        
               <ul className="contact-info-list">
                 <li>
                   <div className="cf-left">Address</div>
