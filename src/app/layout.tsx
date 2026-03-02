@@ -8,6 +8,17 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 export const metadata: Metadata = {
   title: "Game Warrior - Gaming Template",
   description: "Game Warrior - The best games out there",
+  icons: {
+    icon: [
+      { url: "/img/favicon.png", type: "image/png", sizes: "16x16" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "48x48" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "128x128" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "256x256" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+  },
 };
 
 export default function RootLayout({
