@@ -51,9 +51,7 @@ export default function ReviewPage() {
               </div>
             ))}
           </div>
-          <div className="text-center pt-4">
-            <button className="site-btn btn-sm">Load More</button>
-          </div>
+      
         </div>
       </section>
       <section

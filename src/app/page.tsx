@@ -61,10 +61,9 @@ export default function Home() {
                 <div className="container">
                   <h2>{slide.title} <span>{slide.span}</span> {slide.subtitle}</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada
-                    lorem maximus mauris scelerisque, at rutrum nulla dictum.
-                  </p>
-                  <Link href="#" className="site-btn">Read More</Link>
+  We specialize in creating high-quality 3D models and animations for games, films, and digital experiences. Our work blends creativity and technical precision to deliver realistic visuals and immersive worlds.
+</p>
+                
                 </div>
               </div>
             </div>
@@ -93,7 +92,7 @@ export default function Home() {
                   <div className="fi-content text-white">
                     <h5><Link href="#">{f.title}</Link></h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <Link href="#" className="fi-comment">3 Comments</Link>
+                    
                   </div>
                 </div>
               </div>
@@ -122,15 +121,8 @@ export default function Home() {
                   <div className="rgi-content">
                     <h5>{g.title}</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet.</p>
-                    <Link href="#" className="comment">3 Comments</Link>
-                    <div className="rgi-extra">
-                      <div className="rgi-star">
-                        <Image src="/img/icons/star.png" alt="" width={20} height={20} />
-                      </div>
-                      <div className="rgi-heart">
-                        <Image src="/img/icons/heart.png" alt="" width={20} height={20} />
-                      </div>
-                    </div>
+                
+                   
                   </div>
                 </div>
               </div>
@@ -140,7 +132,7 @@ export default function Home() {
       </section>
 
       {/* Tournaments */}
-      <section className="tournaments-section spad">
+      {/* <section className="tournaments-section spad">
         <div className="container">
           <div className="tournament-title">Tournaments</div>
           <div className="row">
@@ -166,7 +158,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Reviews */}
       <section

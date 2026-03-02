@@ -26,11 +26,13 @@ export default function FooterTop() {
           <div className="col-lg-4">
             <div className="footer-logo text-white">
               <Image src="/img/footer-logo.png" alt="Game Warrior" width={120} height={40} />
-              <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+              <p>
+  Our 3D studio delivers professional modeling, animation, and visual effects for gaming and cinematic projects, combining creativity with technical precision.
+</p>
             </div>
           </div>
           <div className="col-lg-4 col-md-6">
-            <div className="footer-widget mb-5 mb-md-0">
+            {/* <div className="footer-widget mb-5 mb-md-0">
               <h4 className="fw-title">Latest Posts</h4>
               <div className="latest-blog">
                 {latestPosts.map((post, i) => (
@@ -44,9 +46,9 @@ export default function FooterTop() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="col-lg-4 col-md-6">
+          {/* <div className="col-lg-4 col-md-6">
             <div className="footer-widget">
               <h4 className="fw-title">Top Comments</h4>
               <div className="top-comment">
@@ -61,7 +63,7 @@ export default function FooterTop() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <style jsx>{`

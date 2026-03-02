@@ -5,8 +5,6 @@ import Link from 'next/link';
 const footerLinks = [
   { href: '/', label: 'Home' },
   { href: '/review', label: 'Games' },
-  { href: '/categories', label: 'Blog' },
-  { href: '/community', label: 'Forums' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -22,11 +20,10 @@ export default function Footer() {
           ))}
         </ul>
         <p className="copyright">
-          Copyright &copy; {new Date().getFullYear()} All rights reserved | Template by{' '}
-          <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">
-            Colorlib
-          </a>
-        </p>
+  Copyright &copy; {new Date().getFullYear()} All rights reserved {' '}
+
+   Developed by Rukh3d@
+</p>
       </div>
       <style jsx>{`
         .footer-section {

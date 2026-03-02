@@ -21,7 +21,7 @@ export default function Header() {
         <Link href="/" className="site-logo">
           <Image src="/img/logo.png" alt="Game Warrior" width={120} height={40} />
         </Link>
-        
+
         <button
           className="nav-switch"
           onClick={() => setMenuOpen(!menuOpen)}
