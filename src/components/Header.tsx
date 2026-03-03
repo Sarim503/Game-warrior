@@ -19,10 +19,9 @@ export default function Header() {
     <header className="header-section">
       <div className="container">
         <Link href="/" className="site-logo">
-          <Image src="/img/logo.png" alt="Game Warrior" width={120} height={40} />
-        </Link>
-
-        <button
+          <Image src="/logo/logo.jpeg" alt="Game Warrior" width={30} height={25} />
+          </Link>
+     <button
           className="nav-switch"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"

@@ -1,42 +1,79 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 
 const heroSlides = [
-  { img: '/img/slider-1.jpg', title: 'The Best', span: 'Games', subtitle: 'Out There' },
-  { img: '/img/slider-2.jpg', title: 'The Best', span: 'Games', subtitle: 'Out There' },
+  { img: '/img/slider-1.jpg', title: 'Individual', span: '/ Animator', subtitle: '' },
+  { img: '/img/slider-2.jpg', title: 'Individual', span: '/ Animator', subtitle: '' },
 ];
 
-const features = [
-  { img: '/img/features/1.jpg', cata: 'new', title: 'Suspendisse ut justo tem por, rutrum' },
-  { img: '/img/features/2.jpg', cata: 'strategy', title: 'Justo tempor, rutrum erat id, molestie' },
-  { img: '/img/features/3.jpg', cata: 'new', title: 'Nullam lacinia ex eleifend orci porttitor' },
-  { img: '/img/features/4.jpg', cata: 'racing', title: 'Lacinia ex eleifend orci suscipit' },
+interface FeatureItem {
+  type: string;
+  cata: string;
+  title: string;
+  sketchfabUrl?: string;
+  modelPageUrl?: string;
+  img?: string;
+}
+
+const features: FeatureItem[] = [
+  {
+    type: 'sketchfab',
+    cata: '3d-model',
+    title: 'Vintage Eggbeater Drill Game Ready Animated',
+    sketchfabUrl: 'https://sketchfab.com/models/32123e1e88104e799ed541efd3196749/embed',
+    modelPageUrl: 'https://sketchfab.com/3d-models/vintage-eggbeater-drill-game-ready-animated-32123e1e88104e799ed541efd3196749?utm_medium=embed&utm_campaign=share-popup&utm_content=32123e1e88104e799ed541efd3196749'
+  },
+  {
+    type: 'sketchfab',
+    cata: '3d-model',
+    title: 'Vespula Pensylvanica, A flying yellow bugs',
+    sketchfabUrl: 'https://sketchfab.com/models/deee12701f784e51a56c5bd27d72adae/embed',
+    modelPageUrl: 'https://sketchfab.com/3d-models/vespula-pensylvanica-a-flying-yellow-bugs-deee12701f784e51a56c5bd27d72adae?utm_medium=embed&utm_campaign=share-popup&utm_content=deee12701f784e51a56c5bd27d72adae'
+  },
+  {
+    type: 'sketchfab',
+    cata: '3d-model',
+    title: 'Frog Jump',
+    sketchfabUrl: 'https://sketchfab.com/models/a3e1dfd0a6134060a0e23d5772edb42f/embed',
+    modelPageUrl: 'https://sketchfab.com/3d-models/frog-jump-a3e1dfd0a6134060a0e23d5772edb42f?utm_medium=embed&utm_campaign=share-popup&utm_content=a3e1dfd0a6134060a0e23d5772edb42f'
+  },
+  {
+    type: 'sketchfab',
+    cata: '3d-model',
+    title: 'Bigger Than Me',
+    sketchfabUrl: 'https://sketchfab.com/models/8ee08135401d420b904bf6bd7830cdea/embed',
+    modelPageUrl: 'https://sketchfab.com/3d-models/bigger-than-me-8ee08135401d420b904bf6bd7830cdea?utm_medium=embed&utm_campaign=share-popup&utm_content=8ee08135401d420b904bf6bd7830cdea'
+  },
 ];
 
 const recentGames = [
-  { img: '/img/recent-game/1.jpg', cata: 'new', title: 'Suspendisse ut justo tem por, rutrum' },
-  { img: '/img/recent-game/2.jpg', cata: 'racing', title: 'Susce pulvinar metus nulla, vel facilisis sem' },
-  { img: '/img/recent-game/3.jpg', cata: 'adventure', title: 'Suspendisse ut justo tem por, rutrum' },
+  { img: '/logo/image11.png', cata: 'new', title: 'Basic or Advanced Human Character Rig', description: 'Professional human armature setup with clean bone hierarchy, optimized for animation, game engines, and realistic character movement.' },
+  { img: '/logo/image22.png', cata: 'new', title: 'Quadruped Animal Rig System', description: 'Custom-built animal armature designed for smooth walk cycles, natural motion, and full control for game and cinematic animation.' },
+
 ];
 
-const tournaments = [
-  { img: '/img/tournament/1.jpg', title: 'World Of WarCraft' },
-  { img: '/img/tournament/2.jpg', title: 'DOOM' },
-];
 
-const reviews = [
-  { img: '/img/review/1.jpg', score: '9.3', scoreClass: 'yellow', title: "Assassin's Creed" },
-  { img: '/img/review/2.jpg', score: '9.5', scoreClass: 'purple', title: 'Doom' },
-  { img: '/img/review/3.jpg', score: '9.1', scoreClass: 'green', title: 'Overwatch' },
-  { img: '/img/review/4.jpg', score: '9.7', scoreClass: 'pink', title: 'GTA' },
+
+interface ReviewItem {
+  videoUrl: string;
+  score?: string;
+  scoreClass?: string;
+  title: string;
+  description?: string;
+}
+
+const reviews: ReviewItem[] = [
+  { videoUrl: 'https://www.youtube.com/embed/0QQqa08C0tc', title: 'Rukh3D - YouTube', description: 'Watch our latest video content.' },
+  { videoUrl: 'https://www.youtube.com/embed/vDGyPCpSQyI', title: 'Rukh3D - YouTube', description: 'Watch our latest video content.' },
 ];
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((s) => (s + 1) % heroSlides.length);
@@ -61,7 +98,7 @@ export default function Home() {
                 <div className="container">
                   <h2>{slide.title} <span>{slide.span}</span> {slide.subtitle}</h2>
                   <p>
-  We specialize in creating high-quality 3D models and animations for games, films, and digital experiences. Our work blends creativity and technical precision to deliver realistic visuals and immersive worlds.
+                  Animator Rigger and Character Artist creating animated characters creatures and game ready assets I focus on clean rigs smooth deformation and expressive motion building optimized models for real time projects and interactive experiences.
 </p>
                 
                 </div>
@@ -86,15 +123,52 @@ export default function Home() {
         <div className="container">
           <div className="row">
             {features.map((f, i) => (
-              <div key={i} className="col-lg-3 col-md-6 p-0">
-                <div className="feature-item set-bg" style={{ backgroundImage: `url(${f.img})` }}>
-                  <span className={`cata ${f.cata}`}>{f.cata}</span>
-                  <div className="fi-content text-white">
-                    <h5><Link href="#">{f.title}</Link></h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    
+              <div key={i} className="col-lg-3 col-md-6 p-1">
+                {f.type === 'sketchfab' && f.sketchfabUrl ? (
+                  <div className="feature-item sketchfab-container">
+                    <span className={`cata ${f.cata}`}>{f.cata}</span>
+                    <div className="sketchfab-embed-wrapper">
+                      <iframe
+                        title={f.title}
+                        frameBorder={0}
+                        allowFullScreen
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        src={f.sketchfabUrl}
+                      />
+                      <p style={{fontSize: '13px', fontWeight: 'normal', margin: '5px', color: '#4A4A4A'}}>
+                        <a
+                          href={f.modelPageUrl}
+                          target="_blank"
+                          rel="nofollow"
+                          style={{fontWeight: 'bold', color: '#1CAAD9'}}
+                        >
+                          {f.title}
+                        </a> by <a
+                          href="https://sketchfab.com/rukh3d?utm_medium=embed&utm_campaign=share-popup"
+                          target="_blank"
+                          rel="nofollow"
+                          style={{fontWeight: 'bold', color: '#1CAAD9'}}
+                        >
+                          Rukh3D
+                        </a> on <a
+                          href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup"
+                          target="_blank"
+                          rel="nofollow"
+                          style={{fontWeight: 'bold', color: '#1CAAD9'}}
+                        >
+                          Sketchfab
+                        </a>
+                      </p>
+                    </div>
                   </div>
-                </div>
+                ) : f.img ? (
+                  <div className="feature-item set-bg" style={{ backgroundImage: `url(${f.img})` }}>
+                    <span className={`cata ${f.cata}`}>{f.cata}</span>
+                    <div className="fi-content text-white">
+                      <h5><Link href="#">{f.title}</Link></h5>
+                    </div>
+                  </div>
+                ) : null}
               </div>
             ))}
           </div>
@@ -104,7 +178,7 @@ export default function Home() {
       {/* Recent Games */}
       <section
         className="recent-game-section spad set-bg"
-        style={{ backgroundImage: 'url(/img/recent-game-bg.png)' }}
+        // style={{ backgroundImage: 'url(/img/recent-game-bg.png)' }}
       >
         <div className="container">
           <div className="section-title">
@@ -120,7 +194,8 @@ export default function Home() {
                   </div>
                   <div className="rgi-content">
                     <h5>{g.title}</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet.</p>
+                    <p>{g.description}</p>
+                   
                 
                    
                   </div>
@@ -131,55 +206,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tournaments */}
-      {/* <section className="tournaments-section spad">
-        <div className="container">
-          <div className="tournament-title">Tournaments</div>
-          <div className="row">
-            {tournaments.map((t, i) => (
-              <div key={i} className="col-md-6">
-                <div className="tournament-item mb-4 mb-lg-0">
-                  <div className="ti-notic">Premium Tournament</div>
-                  <div className="ti-content">
-                    <div className="ti-thumb set-bg" style={{ backgroundImage: `url(${t.img})` }} />
-                    <div className="ti-text">
-                      <h4>{t.title}</h4>
-                      <ul>
-                        <li><span>Tournament Begins:</span> June 20, 2018</li>
-                        <li><span>Tournament Ends:</span> July 01, 2018</li>
-                        <li><span>Participants:</span> 10 teams</li>
-                        <li><span>Tournament Author:</span> Admin</li>
-                      </ul>
-                      <p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+   
 
       {/* Reviews */}
       <section
         className="review-section spad set-bg"
-        style={{ backgroundImage: 'url(/img/review-bg.png)' }}
+        style={{
+          backgroundImage: 'url(/img/review-bg.png)',
+          backgroundRepeat: 'no-repeat'
+        }}
       >
         <div className="container">
           <div className="section-title">
             <div className="cata new">new</div>
-            <h2>Recent Reviews</h2>
+            <h2>Recent Videos</h2>
           </div>
           <div className="row">
             {reviews.map((r, i) => (
               <div key={i} className="col-lg-3 col-md-6">
                 <div className="review-item">
-                  <div className="review-cover set-bg" style={{ backgroundImage: `url(${r.img})` }}>
-                    <div className={`score ${r.scoreClass}`}>{r.score}</div>
+                  <div className="review-video">
+                    <iframe
+                      src={r.videoUrl}
+                      title={r.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   </div>
                   <div className="review-text">
                     <h5>{r.title}</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+                    <p>{r.description || ''}</p>
                   </div>
                 </div>
               </div>
@@ -249,7 +305,23 @@ export default function Home() {
           height: clamp(250px, 30vw, 415px);
           position: relative;
         }
-        .feature-item::after {
+        .sketchfab-container {
+          height: clamp(250px, 30vw, 415px);
+          position: relative;
+          background: var(--bg-elevated);
+          border: 1px solid var(--border);
+        }
+        .sketchfab-embed-wrapper {
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+        .sketchfab-embed-wrapper iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        .feature-item:not(.sketchfab-container)::after {
           content: '';
           position: absolute;
           inset: 0;
@@ -312,6 +384,18 @@ export default function Home() {
           height: 200px;
           position: relative;
           margin-bottom: 15px;
+        }
+        .review-video {
+          position: relative;
+          margin-bottom: 15px;
+          border-radius: 8px;
+          overflow: hidden;
+          aspect-ratio: 16/9;
+        }
+        .review-video iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
         }
         .score {
           position: absolute;

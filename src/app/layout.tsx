@@ -6,8 +6,8 @@ import Preloader from "@/components/Preloader";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
-  title: "Game Warrior - Gaming Template",
-  description: "Game Warrior - The best games out there",
+  title: "Rukh3D - Individual / Animator",
+  description: "Rukh3D - Individual / Animator",
   icons: {
     icon: [
       { url: "/img/favicon.png", type: "image/png", sizes: "16x16" },
